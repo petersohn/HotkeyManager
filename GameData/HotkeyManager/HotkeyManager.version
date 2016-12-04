@@ -1,12 +1,12 @@
 {
   "NAME": "Hotkey Manager",
-  "URL": "https://raw.githubusercontent.com/petersohn/HotkeyManager/master/GameData/HotkeyManager/HotkeyManager.version"
+  "URL": "https://raw.githubusercontent.com/petersohn/HotkeyManager/master/GameData/HotkeyManager/HotkeyManager.version",
   "DOWNLOAD" : "https://github.com/petersohn/HotkeyManager/releases",
   "VERSION": {
     "MAJOR": 1,
     "MINOR": 0,
     "PATCH": 0,
-    "BUILD": 0
+    "BUILD": 1
   },
   "KSP_VERSION": {
     "MAJOR": 1,
