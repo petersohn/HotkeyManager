@@ -75,7 +75,7 @@ namespace HotkeyManager
 		{
 			Vector2 settingsWindowPosition = new Vector2(Screen.width / 2.0f, Screen.height / 2.0f);
 			Persistence.Load (HotkeyManager.MainManager, ref settingsWindowPosition);
-			settingsWindow = new SettingsWindow (HotkeyManager.MainManager);
+			settingsWindow = new SettingsWindow (HotkeyManager.MainManager, "Hotkey Manager");
 			settingsWindow.WindowPosition = settingsWindowPosition;
 		}
 

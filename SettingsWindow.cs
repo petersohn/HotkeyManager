@@ -31,16 +31,16 @@ namespace HotkeyManager
 			set { windowRect.center = value; }
 		}
 
-		public SettingsWindow(HotkeyManager hotkeyManager)
+		public SettingsWindow(HotkeyManager hotkeyManager, String windowTitle)
 		{
 			this.hotkeyManager = hotkeyManager;
+			this.windowTitle = windowTitle;
 		}
 
 		public void Draw()
 		{
 			CalculateStyles ();
-			windowRect = GUILayout.Window(1, windowRect, DrawSettingsWindow, "Hotkey Manager",
-				HighLogic.Skin.window);
+			windowRect = GUILayout.Window(1, windowRect, DrawSettingsWindow, windowTitle, HighLogic.Skin.window);
 		}
 
 		private void DrawSettingsWindow(int windowID)
@@ -161,6 +161,7 @@ namespace HotkeyManager
 		private const int defaultWindowHeight = 500;
 
 		private HotkeyManager hotkeyManager;
+		private String windowTitle;
 		private GUIStyle groupTitleStyle;
 		private List<KeyBinding> allKeyBindings;
 		private float hotkeyButtonWidth = 0.0f;
