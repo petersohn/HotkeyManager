@@ -37,7 +37,7 @@ namespace HotkeyManager
 		public void Start()
 		{
 			Load ();
-			if (toolbarButton == null) {
+			if (toolbarButton == null && HotkeyManager.MainManager.Count != 0) {
 				toolbarButton = ApplicationLauncher.Instance.AddModApplication (
 					OnToolbarOn, OnToolbarOff, null, null, null, null,
 					ApplicationLauncher.AppScenes.SPACECENTER,
