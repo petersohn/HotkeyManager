@@ -6,6 +6,9 @@ This mod provides a library for other mods to define custom hotkeys. It can be
 used in two ways. In managed mode, everything is done automatically with
 centralized configuration. In customized mode, everything can be customized.
 
+**Note to modders:** If you decide to use Hotkey Manager in your mod, feel free
+to send me a PR to include you in the list of users.
+
 ## Managed Mode
 
 This is the simplest way to use this mod. Just call the
