@@ -15,7 +15,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-using System;
+	using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
@@ -66,17 +66,29 @@ namespace HotkeyManager
 
 		public void Remove(String group, String name)
 		{
-			int index = hotkeyActions.FindIndex (element => element.Key == group);
-			if (index == -1) {
+			Debug.Log (Constants.logPrefix + "Removing hotkey: " + group + "." + name);
+			int groupIndex = hotkeyActions.FindIndex (element => element.Key == group);
+			if (groupIndex == -1) {
+				Debug.Log (Constants.logPrefix + "Group not found.");
 				return;
 			}
-			hotkeyActions[index].Value.RemoveAt (
-				hotkeyActions[index].Value.FindIndex (element => element.Key == name));
+			int index = hotkeyActions [groupIndex].Value.FindIndex (element => element.Key == name);
+			if (index == -1) {
+				Debug.Log (Constants.logPrefix + "Group not hotkey.");
+				return;
+			}
+			hotkeyActions[groupIndex].Value.RemoveAt (index);
 		}
 
 		public void RemoveGroup(String group)
 		{
-			hotkeyActions.RemoveAt (hotkeyActions.FindIndex (element => element.Key == group));
+			Debug.Log (Constants.logPrefix + "Removing hotkey group: " + group);
+			int index = hotkeyActions.FindIndex (element => element.Key == group);
+			if (index == -1) {
+				Debug.Log (Constants.logPrefix + "Group not found.");
+				return;
+			}
+			hotkeyActions.RemoveAt (index);
 		}
 
 		public IEnumerator<KeyValuePair<String, List<KeyValuePair<String, HotkeyAction>>>> GetEnumerator()
