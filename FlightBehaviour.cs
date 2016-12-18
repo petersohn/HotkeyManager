@@ -24,7 +24,7 @@ namespace HotkeyManager
 	[KSPAddon (KSPAddon.Startup.Flight, false)]
 	public class FlightBehaviour : MonoBehaviour
 	{
-		public void Update ()
+		public void FixedUpdate ()
 		{
 			HotkeyManager.MainManager.Fire ();
 		}
