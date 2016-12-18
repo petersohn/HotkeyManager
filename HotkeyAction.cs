@@ -36,6 +36,12 @@ namespace HotkeyManager
 			set { keyBinding = value; }
 		}
 
+		public bool EdgeTrigger
+		{
+			get { return edgeTrigger; }
+			set { edgeTrigger = value; }
+		}
+			
 		internal void Fire() {
 			bool state = keyBinding.GetKey ();
 			if (state && (!edgeTrigger || !lastState)) {

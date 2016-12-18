@@ -96,6 +96,33 @@ namespace HotkeyManager
 			return hotkeyActions.GetEnumerator ();
 		}
 
+		public struct GroupList
+		{
+			internal GroupList(List<KeyValuePair<String, HotkeyAction>> list)
+			{
+				this.list = list;
+			}
+
+			public IEnumerator<KeyValuePair<String, HotkeyAction>> GetEnumerator()
+			{
+				if (list == null) {
+					return null;
+				}
+				return list.GetEnumerator();
+			}
+
+			private List<KeyValuePair<String, HotkeyAction>> list;
+		}
+
+		public GroupList GetGroup(String group)
+		{
+			int index = hotkeyActions.FindIndex (element => element.Key == group);
+			if (index == -1) {
+				return new GroupList(null);
+			}
+			return new GroupList(hotkeyActions[index].Value);
+		}
+
 		public int Count { get { return hotkeyActions.Count; } }
 
 		public void Save(ConfigNode node)
